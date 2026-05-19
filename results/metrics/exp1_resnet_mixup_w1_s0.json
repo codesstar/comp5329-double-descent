@@ -1,0 +1,15 @@
+{
+  "run_id": "exp1_resnet_mixup_w1_s0",
+  "status": "completed",
+  "n_params": 44370,
+  "train_loss": 0.908514,
+  "test_error": 0.1332,
+  "best_test_error": 0.1332,
+  "duration_min": 19.59,
+  "width": 8,
+  "width_idx": 1,
+  "augment": "mixup",
+  "model": "resnet",
+  "exp": "exp1",
+  "dataset": "cifar10"
+}

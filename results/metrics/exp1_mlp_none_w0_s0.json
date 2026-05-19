@@ -1,0 +1,15 @@
+{
+  "run_id": "exp1_mlp_none_w0_s0",
+  "status": "completed",
+  "n_params": 49610,
+  "train_loss": 1.201822,
+  "test_error": 0.5566,
+  "best_test_error": 0.5566,
+  "duration_min": 45.76,
+  "width": 16,
+  "width_idx": 0,
+  "augment": "none",
+  "model": "mlp",
+  "exp": "exp1",
+  "dataset": "cifar10"
+}

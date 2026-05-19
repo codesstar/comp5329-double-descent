@@ -1,0 +1,19 @@
+\section{Introduction}
+
+A foundational principle of statistical learning holds that models with more parameters than training samples will overfit and generalize poorly. Yet modern deep neural networks routinely operate in precisely this over-parameterized regime and achieve remarkable generalization~\cite{zhang2017understanding}. This tension motivated the formal study of the \emph{double descent} phenomenon: as model capacity increases, test error follows a non-monotonic trajectory---falling with classical bias reduction, peaking sharply near the \emph{interpolation threshold}, and then falling again as over-parameterized models find benign, well-interpolating solutions~\cite{belkin2019reconciling,nakkiran2020deep}.
+
+The interpolation threshold is practically important: models trained near this peak experience the worst test performance for their parameter budget. Understanding what controls the threshold's position and height enables practitioners to avoid this regime or push it beyond the capacity they intend to use. Yet most prior work has studied the phenomenon under fixed training conditions, leaving open how common training-time interventions affect it.
+
+Data augmentation is one of the most universally applied techniques in deep learning. Strategies such as Cutout~\cite{devries2017cutout} and MixUp~\cite{zhang2018mixup} are known to improve generalization, typically framed as regularization or effective sample-size expansion. However, their effect on the \emph{structure} of the double descent curve---whether they suppress, shift, or entirely eliminate the interpolation peak---has not been systematically investigated. Nakkiran et al.~\cite{nakkiran2020deep} note in passing that label noise and augmentation may interact with the threshold, but provide no controlled analysis.
+
+\paragraph{Our Contributions.} We address this gap with a controlled empirical study:
+
+\begin{itemize}
+    \item We demonstrate that \textbf{ResNets without augmentation exhibit a clear double descent} on CIFAR-10: test error decreases to a local minimum at $\sim$697K parameters, then rises at 1.56M and 2.78M---a genuine double-descent hump.
+    \item We show that \textbf{all four augmentation strategies completely eliminate this peak}, yielding monotonically decreasing error curves across all model sizes, with final errors 66\%--69\% lower than the no-augmentation baseline.
+    \item We establish that \textbf{MLP architectures show no double descent} under any augmentation condition, implicating the convolutional inductive bias as a necessary condition for double descent in this setting.
+    \item We report a \textbf{negative result}: MixUp intensity ($\alpha \in [0.1, 1.0]$) has negligible effect on the test error curve (variation $<$0.0001), suggesting the mere act of mixing---rather than its intensity---drives the effect.
+    \item We validate on \textbf{CIFAR-100} that augmentation benefits increase with task difficulty, with Cutout achieving a 37\% relative error reduction at 2.78M parameters.
+\end{itemize}
+
+These findings contribute a mechanistic picture of why augmentation improves generalization in over-parameterized networks, and carry direct implications for model design choices near the interpolation threshold.

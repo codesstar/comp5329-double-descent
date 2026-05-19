@@ -1,0 +1,15 @@
+{
+  "run_id": "exp1_mlp_flip_crop_w2_s1",
+  "status": "completed",
+  "n_params": 201482,
+  "train_loss": 1.272503,
+  "test_error": 0.4682,
+  "best_test_error": 0.4682,
+  "duration_min": 10.28,
+  "width": 64,
+  "width_idx": 2,
+  "augment": "flip_crop",
+  "model": "mlp",
+  "exp": "exp1",
+  "dataset": "cifar10"
+}

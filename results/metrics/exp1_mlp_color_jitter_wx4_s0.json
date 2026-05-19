@@ -1,0 +1,15 @@
+{
+  "run_id": "exp1_mlp_color_jitter_wx4_s0",
+  "status": "completed",
+  "n_params": 12362,
+  "train_loss": 2.066023,
+  "test_error": 0.8171,
+  "best_test_error": 0.8127,
+  "duration_min": 25.44,
+  "width": 4,
+  "width_idx": -2,
+  "augment": "color_jitter",
+  "model": "mlp",
+  "exp": "exp1",
+  "dataset": "cifar10"
+}

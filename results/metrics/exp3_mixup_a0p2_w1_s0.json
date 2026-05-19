@@ -1,0 +1,15 @@
+{
+  "run_id": "exp3_mixup_a0p2_w1_s0",
+  "status": "completed",
+  "n_params": 99722,
+  "train_loss": 1.687968,
+  "test_error": 0.5,
+  "best_test_error": 0.5,
+  "duration_min": 13.02,
+  "width": 32,
+  "width_idx": 1,
+  "augment": "mixup",
+  "model": "mlp",
+  "exp": "exp3",
+  "dataset": "cifar10"
+}

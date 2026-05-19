@@ -1,0 +1,33 @@
+\section{Methodology}
+
+\subsection{Architectures}
+
+\textbf{ResNet.} We use a ResNet-18 variant with three residual stages. The base channel width $c$ is varied across seven levels: $c \in \{2, 4, 8, 12, 16, 24, 32, 48\}$, yielding parameter counts spanning approximately 11K to 2.78M. Skip connections and batch normalization are standard throughout. This architecture is the primary vehicle for studying double descent, as convolutional architectures with residual connections are where the phenomenon is expected to manifest most clearly~\cite{nakkiran2020deep}.
+
+\textbf{MLP.} A three-layer fully-connected network with ReLU activations. Hidden width $w$ is varied to produce comparable parameter scales. Input images are flattened to a 3072-dimensional vector; no batch normalization is applied, to isolate augmentation effects from normalization effects. The MLP serves as an architecture-level control: if double descent is a universal phenomenon, both architectures should show it under identical augmentation conditions.
+
+\subsection{Augmentation Strategies}
+
+We evaluate five augmentation strategies:
+
+\begin{itemize}
+    \item \textbf{None}: Only channel-wise mean-std normalization. Serves as the baseline for identifying the unperturbed double descent curve.
+    \item \textbf{Flip+Crop}: Random horizontal flip and random $32{\times}32$ crop with padding 4. Standard light geometric augmentation that preserves all pixels.
+    \item \textbf{Cutout}: Flip+Crop plus a $16{\times}16$ random zero-mask applied to the input~\cite{devries2017cutout}. Removes roughly 25\% of pixels per sample, encouraging global feature reliance.
+    \item \textbf{MixUp}: Flip+Crop plus convex interpolation of input-label pairs: $\tilde{x} = \lambda x_i + (1-\lambda)x_j$, $\tilde{y} = \lambda y_i + (1-\lambda)y_j$, where $\lambda \sim \text{Beta}(\alpha, \alpha)$ with $\alpha{=}0.4$ in the primary experiment~\cite{zhang2018mixup}. Creates label-smoothed, novel training examples.
+    \item \textbf{Color Jitter}: Flip+Crop plus random perturbations to brightness ($\pm$0.4), contrast ($\pm$0.4), saturation ($\pm$0.4), and hue ($\pm$0.1). Primarily affects color statistics rather than spatial structure.
+\end{itemize}
+
+\subsection{Training Protocol}
+
+All models are trained for 200 epochs using SGD with Nesterov momentum ($\mu{=}0.9$), weight decay $\lambda{=}5{\times}10^{-4}$, initial learning rate $\eta_0{=}0.1$, and cosine annealing. Batch size is 128. Each configuration---defined by architecture, augmentation strategy, and model width---is run with three independent random seeds. We report the mean test error (fraction of misclassified samples on the held-out test set) at the epoch of best validation loss, averaged across seeds.
+
+\subsection{Datasets}
+
+\textbf{CIFAR-10}~\cite{krizhevsky2009learning}: 50,000 training and 10,000 test images across 10 object classes at $32{\times}32$ pixels. Used for all primary experiments (Experiments 1--3).
+
+\textbf{CIFAR-100}: Same image size and training/test split as CIFAR-10, but 100 fine-grained classes. Used in Experiment 4 to test whether findings generalize to a harder classification task.
+
+\subsection{Ablation: MixUp Intensity}
+
+To assess whether the MixUp effect depends on interpolation strength, we repeat the ResNet/CIFAR-10 experiment with five values of $\alpha$: $\{0.1, 0.2, 0.4, 0.8, 1.0\}$. We measure test error at each model width and compare curves across $\alpha$ values.

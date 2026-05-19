@@ -1,0 +1,15 @@
+{
+  "run_id": "exp4_resnet_cutout_w2_s0",
+  "status": "completed",
+  "n_params": 181108,
+  "train_loss": 1.056674,
+  "test_error": 0.3262,
+  "best_test_error": 0.3262,
+  "duration_min": 24.53,
+  "width": 16,
+  "width_idx": 2,
+  "augment": "cutout",
+  "model": "resnet",
+  "exp": "exp4",
+  "dataset": "cifar100"
+}

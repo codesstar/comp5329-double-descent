@@ -1,0 +1,9 @@
+\section{Conclusion}
+
+We presented a controlled empirical study of how data augmentation affects the double descent phenomenon in neural networks. Our main finding is unambiguous: \textbf{ResNets without augmentation show a clear double descent on CIFAR-10}, with test error rising 16\% between the 697K-parameter trough and the 2.78M-parameter peak, while \textbf{all four augmentation strategies completely eliminate this peak}, yielding monotonically decreasing error curves with 65--69\% lower error at large model sizes. Three mechanisms appear to jointly drive this effect: effective sample size increase, loss landscape smoothing, and inductive bias regularization.
+
+A key negative finding is that \textbf{MixUp is insensitive to its interpolation coefficient $\alpha$}: values from 0.1 to 1.0 produce nearly identical results, suggesting the existence---rather than the intensity---of label mixing is what matters. We also find that \textbf{MLPs show no double descent} under any condition, implicating convolutional or residual architecture components as necessary conditions for the phenomenon in our setting.
+
+Practically, our results support a simple recommendation: \emph{use any standard data augmentation}. Flip+Crop alone is sufficient to eliminate double descent on CIFAR-10, with more aggressive strategies (Cutout, MixUp) providing additional accuracy gains. The choice of augmentation strategy matters less for double descent suppression than for final accuracy.
+
+Future work could extend this analysis to larger-scale settings, investigate augmentation combinations, and develop a formal theory connecting augmentation statistics to interpolation threshold position.

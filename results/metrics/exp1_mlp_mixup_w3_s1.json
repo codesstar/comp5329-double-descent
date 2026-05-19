@@ -1,0 +1,15 @@
+{
+  "run_id": "exp1_mlp_mixup_w3_s1",
+  "status": "completed",
+  "n_params": 411146,
+  "train_loss": 1.486574,
+  "test_error": 0.4392,
+  "best_test_error": 0.4392,
+  "duration_min": 12.04,
+  "width": 128,
+  "width_idx": 3,
+  "augment": "mixup",
+  "model": "mlp",
+  "exp": "exp1",
+  "dataset": "cifar10"
+}

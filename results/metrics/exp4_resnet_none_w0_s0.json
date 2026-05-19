@@ -1,0 +1,15 @@
+{
+  "run_id": "exp4_resnet_none_w0_s0",
+  "status": "completed",
+  "n_params": 12904,
+  "train_loss": 1.941883,
+  "test_error": 0.5957,
+  "best_test_error": 0.5957,
+  "duration_min": 18.06,
+  "width": 4,
+  "width_idx": 0,
+  "augment": "none",
+  "model": "resnet",
+  "exp": "exp4",
+  "dataset": "cifar100"
+}

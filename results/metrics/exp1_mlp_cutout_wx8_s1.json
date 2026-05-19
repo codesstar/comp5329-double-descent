@@ -1,0 +1,15 @@
+{
+  "run_id": "exp1_mlp_cutout_wx8_s1",
+  "status": "completed",
+  "n_params": 24746,
+  "train_loss": 1.817559,
+  "test_error": 0.6502,
+  "best_test_error": 0.6502,
+  "duration_min": 12.02,
+  "width": 8,
+  "width_idx": -1,
+  "augment": "cutout",
+  "model": "mlp",
+  "exp": "exp1",
+  "dataset": "cifar10"
+}

@@ -1,0 +1,15 @@
+{
+  "run_id": "exp1_resnet_color_jitter_w2_s0",
+  "status": "completed",
+  "n_params": 175258,
+  "train_loss": 0.089626,
+  "test_error": 0.0863,
+  "best_test_error": 0.0863,
+  "duration_min": 50.98,
+  "width": 16,
+  "width_idx": 2,
+  "augment": "color_jitter",
+  "model": "resnet",
+  "exp": "exp1",
+  "dataset": "cifar10"
+}

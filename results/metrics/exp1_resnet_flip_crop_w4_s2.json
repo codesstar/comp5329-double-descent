@@ -1,0 +1,15 @@
+{
+  "run_id": "exp1_resnet_flip_crop_w4_s2",
+  "status": "completed",
+  "n_params": 696618,
+  "train_loss": 0.006097,
+  "test_error": 0.056,
+  "best_test_error": 0.056,
+  "duration_min": 40.47,
+  "width": 32,
+  "width_idx": 4,
+  "augment": "flip_crop",
+  "model": "resnet",
+  "exp": "exp1",
+  "dataset": "cifar10"
+}
