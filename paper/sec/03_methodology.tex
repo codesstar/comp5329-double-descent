@@ -2,7 +2,7 @@
 
 \subsection{Architectures}
 
-\textbf{ResNet.} We use a ResNet-18 variant with three residual stages. The base channel width $c$ is varied across seven levels: $c \in \{2, 4, 8, 12, 16, 24, 32, 48\}$, yielding parameter counts spanning approximately 11K to 2.78M. Skip connections and batch normalization are standard throughout. This architecture is the primary vehicle for studying double descent, as convolutional architectures with residual connections are where the phenomenon is expected to manifest most clearly~\cite{nakkiran2020deep}.
+\textbf{ResNet.} We use a ResNet-18 variant with three residual stages. The base channel width $c$ is varied across seven levels: $c \in \{4, 8, 16, 24, 32, 48, 64\}$, yielding parameter counts spanning approximately 11K to 2.78M. Skip connections and batch normalization are standard throughout. This architecture is the primary vehicle for studying double descent, as convolutional architectures with residual connections are where the phenomenon is expected to manifest most clearly~\cite{nakkiran2020deep}.
 
 \textbf{MLP.} A three-layer fully-connected network with ReLU activations. Hidden width $w$ is varied to produce comparable parameter scales. Input images are flattened to a 3072-dimensional vector; no batch normalization is applied, to isolate augmentation effects from normalization effects. The MLP serves as an architecture-level control: if double descent is a universal phenomenon, both architectures should show it under identical augmentation conditions.
 
@@ -30,4 +30,4 @@ All models are trained for 200 epochs using SGD with Nesterov momentum ($\mu{=}0
 
 \subsection{Ablation: MixUp Intensity}
 
-To assess whether the MixUp effect depends on interpolation strength, we repeat the ResNet/CIFAR-10 experiment with five values of $\alpha$: $\{0.1, 0.2, 0.4, 0.8, 1.0\}$. We measure test error at each model width and compare curves across $\alpha$ values.
+To assess whether the MixUp effect depends on interpolation strength, we repeat the MLP/CIFAR-10 experiment with five values of $\alpha$: $\{0.1, 0.2, 0.4, 0.8, 1.0\}$. We measure test error at each model width and compare curves across $\alpha$ values.

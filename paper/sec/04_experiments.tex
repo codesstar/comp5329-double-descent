@@ -92,7 +92,7 @@ The absence of double descent in MLPs suggests that the phenomenon observed in R
 \begin{figure}[h]
   \centering
   \includegraphics[width=\linewidth]{../results/figures/fig4_mixup_ablation.png}
-  \caption{Effect of MixUp coefficient $\alpha \in \{0.1, 0.2, 0.4, 0.8, 1.0\}$ on ResNet test error across parameter scales (CIFAR-10). The five curves are nearly indistinguishable, indicating that MixUp effectiveness is insensitive to interpolation strength in this range.}
+  \caption{Effect of MixUp coefficient $\alpha \in \{0.1, 0.2, 0.4, 0.8, 1.0\}$ on MLP test error across parameter scales (CIFAR-10). The five curves are nearly indistinguishable, indicating that MixUp effectiveness is insensitive to interpolation strength in this range.}
   \label{fig:mixup_ablation}
 \end{figure}
 
@@ -105,7 +105,7 @@ This is a \textbf{negative result that is informative}: the common intuition tha
 
 \begin{table}[h]
 \centering
-\caption{ResNet test error on CIFAR-100 for three augmentation conditions. Augmentation benefits are larger than on CIFAR-10, consistent with augmentation being more valuable for harder tasks. At 2.78M parameters, Cutout achieves a 37\% relative error reduction vs.\ no augmentation.}
+\caption{ResNet test error on CIFAR-100 for three augmentation conditions. Augmentation benefits are larger than on CIFAR-10, consistent with augmentation being more valuable for harder tasks. At 2.78M parameters, Cutout achieves a 36.7\% relative error reduction vs.\ no augmentation.}
 \label{tab:cifar100}
 \small
 \begin{tabular}{@{}lrrrr@{}}

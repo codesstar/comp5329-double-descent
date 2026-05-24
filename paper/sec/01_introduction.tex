@@ -10,10 +10,10 @@ Data augmentation is one of the most universally applied techniques in deep lear
 
 \begin{itemize}
     \item We demonstrate that \textbf{ResNets without augmentation exhibit a clear double descent} on CIFAR-10: test error decreases to a local minimum at $\sim$697K parameters, then rises at 1.56M and 2.78M---a genuine double-descent hump.
-    \item We show that \textbf{all four augmentation strategies completely eliminate this peak}, yielding monotonically decreasing error curves across all model sizes, with final errors 66\%--69\% lower than the no-augmentation baseline.
+    \item We show that \textbf{all four augmentation strategies completely eliminate this peak}, yielding monotonically decreasing error curves across all model sizes, with final errors 65\%--69\% lower than the no-augmentation baseline.
     \item We establish that \textbf{MLP architectures show no double descent} under any augmentation condition, implicating the convolutional inductive bias as a necessary condition for double descent in this setting.
     \item We report a \textbf{negative result}: MixUp intensity ($\alpha \in [0.1, 1.0]$) has negligible effect on the test error curve (variation $<$0.0001), suggesting the mere act of mixing---rather than its intensity---drives the effect.
-    \item We validate on \textbf{CIFAR-100} that augmentation benefits increase with task difficulty, with Cutout achieving a 37\% relative error reduction at 2.78M parameters.
+    \item We validate on \textbf{CIFAR-100} that augmentation benefits increase with task difficulty, with Cutout achieving a 36.7\% relative error reduction at 2.78M parameters.
 \end{itemize}
 
 These findings contribute a mechanistic picture of why augmentation improves generalization in over-parameterized networks, and carry direct implications for model design choices near the interpolation threshold.
